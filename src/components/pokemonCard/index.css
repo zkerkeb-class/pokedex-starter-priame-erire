@@ -1,0 +1,35 @@
+.Pokemon {
+    border: 1px solid blue; 
+    background-color: orangered; 
+  }
+  .CaracteristicPokemonCard {
+    border: 5px solid green; 
+    border-radius : 1px;
+    padding : 5px solid gold;
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue; 
+  }
+  .pokemanimage{
+    width: 40;
+    height: 40;
+  }
+  .NomPokemon{
+    background-color: rgb(228, 205, 0);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .PointAtt{
+    background-color: purple;
+    white-space: pre-wrap;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .pokemon-type{
+  background-color: orange; 
+  font-size: 22px;
+  text-align: left;
+  }
