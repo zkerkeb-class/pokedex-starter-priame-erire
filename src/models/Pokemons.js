@@ -1,39 +1,27 @@
 import mongoose from 'mongoose';
 
 const pokemonSchema = new mongoose.Schema({
-  id: {
-    type: Number,
-    required: true,
-    unique: true
-  },
+  id: Number,
   name: {
-    type: String,
-    required: true
+    english: String,
+    japanese: String,
+    chinese: String,
+    french: String
   },
-  types: [{
-    type: String,
-    enum: [
-      "fire", "water", "grass", "electric", "ice", "fighting",
-      "poison", "ground", "flying", "psychic", "bug", "rock",
-      "ghost", "dragon", "dark", "steel", "fairy"
-    ]
-  }],
-  image: {
-    type: String
+  type: [String],
+  base: {
+    HP: Number,
+    Attack: Number,
+    Defense: Number,
+    "Sp. Attack": Number,
+    "Sp. Defense": Number,
+    Speed: Number
   },
-  stats: {
-    hp: Number,
-    attack: Number,
-    defense: Number,
-    specialAttack: Number,
-    specialDefense: Number,
-    speed: Number
-  },
-  evolutions: [{
-    type: Number,
-    ref: 'Pokemon'
-  }]
-}, {
+  image: String,
+  imageShiny: String
+}
+
+, {
   timestamps: true
 });
 
