@@ -100,9 +100,9 @@ function Home() {
                     nameEnglish={pokemon.name?.english || `Pokemon #${pokemon.id}`}
                     types={pokemon.type}
                     image={pokemon.image}
-                    spAttack={pokemon.Attack}
-                    spDefense={pokemon.Defense}
-                    baseSpeed={pokemon.Speed}
+                    spAttack={pokemon.base?.["Sp_Attack"] || pokemon.base?.["Sp. Attack"] || pokemon.base?.Sp?.[" Attack"] || 0}
+                    spDefense={pokemon.base?.["Sp_Defense"] || pokemon.base?.["Sp. Defense"] || pokemon.base?.Sp?.[" Defense"] || 0}
+                    baseSpeed={pokemon.base?.Speed}
                     id={pokemon._id}
                   />
                 </div>

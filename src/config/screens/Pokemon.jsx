@@ -23,6 +23,12 @@ const Pokemon = () => {
         deletePokemon(id);
         navigate('/'); // Navigate to home page after deletion
     };
+    
+    // come back to the Home Page
+    const returnHome = () => {
+        console.log("Comeback home ");
+        navigate(`/`);
+    };
 
     useEffect(() => {
         const fetchPokemon = async () => {
@@ -46,46 +52,50 @@ const Pokemon = () => {
     if (!pokemon) return <div className="not-found-container">Pokemon not found</div>;
 
     // Helper function to determine background color based on Pokemon type
-    const getTypeColor = (type) => {
+    const getTypeColor = (types) => {
         const typeColors = {
-            normal: '#A8A77A',
-            fire: '#EE8130',
-            water: '#6390F0',
-            electric: '#F7D02C',
-            grass: '#7AC74C',
-            ice: '#96D9D6',
-            fighting: '#C22E28',
-            poison: '#A33EA1',
-            ground: '#E2BF65',
-            flying: '#A98FF3',
-            psychic: '#F95587',
-            bug: '#A6B91A',
-            rock: '#B6A136',
-            ghost: '#735797',
-            dragon: '#6F35FC',
-            dark: '#705746',    
-            steel: '#B7B7CE',
-            fairy: '#D685AD'
+            Normal: '#A8A77A',
+            Fire: '#EE8130',
+            Water: '#6390F0',
+            Electric: '#F7D02C',
+            Grass: '#7AC74C',
+            Ice: '#96D9D6',
+            Fighting: '#C22E28',
+            Poison: '#A33EA1',
+            Ground: '#E2BF65',
+            Flying: '#A98FF3',
+            Psychic: '#F95587',
+            Bug: '#A6B91A',
+            Rock: '#B6A136',
+            Ghost: '#735797',
+            Dragon: '#6F35FC',
+            Dark: '#705746',    
+            Steel: '#B7B7CE',
+            Fairy: '#D685AD'
         };
         
-        return typeColors[type.toLowerCase()] || '#777777';
+        return typeColors[types.toLowerCase()] || '#777777';
     };
 
     return (
         <div className="pokemon-container">
             <div className="pokemon-card">
                 <div className="pokemon-header">
+                    <button style={{ backgroundColor: '#2980b9', color: 'white', textAlign: 'left' }}
+                        onClick={() => returnHome()}
+                        >Home Page
+                    </button>
                     <h1><span className='french-name'>({pokemon.name.french})</span>
                     <span className="english-name">({pokemon.name.english})</span></h1>
                     <div className="pokemon-types">
-                        {pokemon.types && pokemon.types.length > 0 ? (
-                        pokemon.types.map(typeObj => (
+                        {pokemon.type && pokemon.type.length > 0 ? (
+                        pokemon.type.map(type => (
                         <span
-                            key={typeObj.type}
+                            key={type}
                             className="type-badge"
-                            style={{ backgroundColor: getTypeColor(typeObj.type) }}
+                            style={{ backgroundColor: getTypeColor(type) }}
                         >
-                        {typeObj.type}
+                        {type}
                         </span>
                         ))
                         ) : (
@@ -94,6 +104,7 @@ const Pokemon = () => {
                         </span>
                         )}
                     </div>
+                    
                 </div>
                 
                 <div className="pokemon-content">
