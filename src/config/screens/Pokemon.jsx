@@ -52,7 +52,7 @@ const Pokemon = () => {
     if (!pokemon) return <div className="not-found-container">Pokemon not found</div>;
 
     // Helper function to determine background color based on Pokemon type
-    const getTypeColor = (types) => {
+    const getTypeColor = (type) => {
         const typeColors = {
             Normal: '#A8A77A',
             Fire: '#EE8130',
@@ -74,7 +74,7 @@ const Pokemon = () => {
             Fairy: '#D685AD'
         };
         
-        return typeColors[types.toLowerCase()] || '#777777';
+        return typeColors[type] || '#777777';
     };
 
     return (
@@ -159,17 +159,18 @@ const Pokemon = () => {
                             {!showDeleteConfirmation ? (
                                 <div>
                                     <button 
+                                        style={{ backgroundColor: 'orange', color: 'white' }}
+                                        onClick={() => editerLePokemon()}
+                                    >
+                                        Modifier le pokémon
+                                    </button>
+                                    <button 
                                         style={{ backgroundColor: 'red', color: 'white', marginRight: '10px' }}
                                         onClick={() => setShowDeleteConfirmation(true)}
                                     >
                                         Supprimer le pokémon
                                     </button>
-                                    <button 
-                                        style={{ backgroundColor: 'orange', color: 'white' }}
-                                        onClick={() => editerLePokemon()}
-                                    >
-                                        Editer le pokémon
-                                    </button>
+                                    
                                 </div>
                             ) : (
                                 <div className="confirmation-panel" style={{ 
