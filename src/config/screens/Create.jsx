@@ -34,7 +34,6 @@ const Create = () => {
   const returnHome = () => {
     console.log("Comeback home ");
     navigate(`/`);
-    // navigate(`/edit/${id}`);
 };
 
   // Field validation function
