@@ -24,14 +24,39 @@ const Cruser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
    
-    // Validation
+    // Password match validation
     if (formData.password !== formData.confirmPassword) {
       setError("Les mots de passe ne correspondent pas");
       return;
     }
    
+    // Password length validation
     if (formData.password.length < 12) {
       setError("Le mot de passe doit contenir au moins 12 caractères");
+      return;
+    }
+
+    // Uppercase validation
+    if (!/[A-Z]/.test(formData.password)) {
+      setError("Le mot de passe doit contenir au moins une lettre majuscule");
+      return;
+    }
+
+    // Lowercase validation
+    if (!/[a-z]/.test(formData.password)) {
+      setError("Le mot de passe doit contenir au moins une lettre minuscule");
+      return;
+    }
+
+    // Number validation
+    if (!/[0-9]/.test(formData.password)) {
+      setError("Le mot de passe doit contenir au moins un chiffre");
+      return;
+    }
+
+    // Special character validation
+    if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(formData.password)) {
+      setError("Le mot de passe doit contenir au moins un caractère spécial");
       return;
     }
 
@@ -87,6 +112,16 @@ const Cruser = () => {
               required
               placeholder="Entrez votre mot de passe"
             />
+            <div className="password-requirements">
+              <small>Le mot de passe doit contenir au moins:</small>
+              <ul>
+                <li>12 caractères</li>
+                <li>Une lettre majuscule</li>
+                <li>Une lettre minuscule</li>
+                <li>Un chiffre</li>
+                <li>Un caractère spécial</li>
+              </ul>
+            </div>
           </div>
          
           <div className="form-group">

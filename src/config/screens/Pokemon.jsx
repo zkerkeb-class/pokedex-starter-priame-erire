@@ -214,5 +214,4 @@ const Pokemon = () => {
         </div>
     );
 };
-
 export default Pokemon;
