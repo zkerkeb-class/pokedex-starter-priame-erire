@@ -13,6 +13,18 @@ function Home() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const allerAuPokemonHasard = () => {
+    if(pokemons.length > 0){
+    let nm_alea = Math.floor(Math.random() * (pokemons.length));
+    let id_alea = pokemons[nm_alea]._id;
+    console.log(" Allons à id : ",id_alea);
+    navigate(`/pokemon/${id_alea}`);
+    }
+    else{
+      console.log("Pas de pokémons disponible");
+    }
+}
+
   // Fetch pokemons from API
   const getPokemonFromApi = async () => {
     try {
@@ -66,6 +78,11 @@ function Home() {
           >
           Ajouter un nouveau pokémon
           </button>
+          <button style={{ backgroundColor: '#206329', color: 'white', marginRight: '10px', textAlign: 'center', width: '150px',height:'100px'}} 
+          onClick={() => allerAuPokemonHasard()}>
+                Voir un pokémon au hasard
+            </button>
+
       </header>
 
       <div className="search-container">

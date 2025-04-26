@@ -42,7 +42,9 @@ const PokemonCard = ({nameFrench, nameEnglish, spAttack,spDefense,baseSpeed,imag
                 )}
             </div>
             <br></br>id : {id}
-            <button onClick={allerAuPokemon}>
+            <button
+            style={{ backgroundColor: '#AD9121', color: 'white'}} 
+            onClick={allerAuPokemon}>    
                 Voir pokemon en détail
             </button>
 
