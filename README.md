@@ -62,7 +62,87 @@ La route users est une extension envisagée non finalisé visant à créer des r
 Le dossier Models contient deux fichiers Pokemon.js et User.js décrivant les caractéristiques que doivent posséder un pokémon et un utilisateur.
 Le fichier db.js dans le dossier config assure la bonne connexion à la base de données.
 
+Voici la constitution d'un pokémon : 
+```javascript
+const pokemonSchema = new mongoose.Schema({
+  id: Number,
+  name: {
+    english: String,
+    japanese: String,
+    chinese: String,
+    french: String
+  },
+  type: [String],
+  base: {
+    HP: Number,
+    Attack: Number,
+    Defense: Number,
+    "Sp. Attack": Number,
+    "Sp. Defense": Number,
+    Speed: Number
+  },
+  image: String,
+  imageShiny: String
+}, { strict: false });
+```
+Voici la constitution d'un utilisateur : 
+```javascript
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true // remove the space at the end 
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+```
+| Les différentes routes |
+|------------------------|
 
+ROUTE des UTILISATEURS
+
+base URL : http://localhost:3000/api/auth//login
+
+POST
+- Inscription d'un utilisateur
+```javascript app.post('/register') ```
+- Connexion à un compte
+```javascript app.post('/login')login ```
+
+ROUTE des POKEMONS
+
+base URL : http://localhost:3000/api/pokemons/api/pokemons
+
+GET :
+- Récupération de tous les pokémons
+```javascript app.get("/") ```
+- Récupération d'un pokémon
+```javascript app.get("/:id") ```
+
+POST
+- Création d'un pokémon
+```javascript app.post("/") ```
+
+PUT 
+- Mettre à jour un pokémon
+```javascript app.put("/:id") ```
+
+DELETE 
+- Supprimer un pokémon
+```javascript app.delete("/:id") ```
 
 |  4) Lien vers la vidéo de démonstration YouTube |
 |-------------------------------------------------|
