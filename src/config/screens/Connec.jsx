@@ -1,11 +1,12 @@
 // Ce composant permet d'établir la connexion d'un utilisateur 
-// Il est lancé en premier.
+// Il est lancé en premier
+// Si l'utilisateur n'a pas de compte, il dirige vers la page de création de compte
+// Sinon, l'utilisateur reçoit un token et va à la page Home
 // La route est publique
 
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { connectUser } from '../../services/api'; 
-import './Connec.css';
 
 const Connec = () => {
   const navigate = useNavigate();
