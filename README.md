@@ -49,7 +49,14 @@ Une fois toutes ces étapes réalisées, il ne reste plus qu’à lancer le proj
 |  3) Documentation de l'API      |
 |---------------------------------|
 
-Passons maintenant à des considérations plus techniques
+Passons maintenant à des considérations plus techniques sur l’API. Le frontend est connecté à deux API toutes les deux reliées au port 300.
+Le fichier Index.js définit les deux ensembles de routes : /api/pokemons et /api/auth.
+Deux routeurs (ensemble de routes) sont créés dans le dossier routes. La première pokemonRoutes.js gèrent l’ensemble des requêtes http à la base de données sur la gestion des pokémons. La deuxième auth.js gèrent l’ensemble des requêtes http à la base de données sur la gestion des utilisateurs et des tokens.
+La route users est une extension envisagée non finalisé visant à créer des routes spécifiques pour les administrateurs.
+Service gère les requêtes http et les rends au frontend.
+Le dossier Models contient deux fichiers Pokemon.js et User.js décrivant les caractéristiques que doivent posséder un pokémon et un utilisateur.
+Le fichier db.js dans le dossier config assure la bonne connexion à la base de données.
+
 
 
 |  4) Lien vers la vidéo de démonstration YouTube |
