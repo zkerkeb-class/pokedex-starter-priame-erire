@@ -1,0 +1,74 @@
+/* Form animations */
+input, select, button {
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, select:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card hover effects */
+  .bg-gray-50 {
+    transition: all 0.3s ease;
+  }
+  
+  .bg-gray-50:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* Message animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  /* Apply animation to message alerts */
+  [class*="bg-red-100"], [class*="bg-green-100"] {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Improve stat bars */
+  [class*="bg-red-500"], [class*="bg-yellow-500"], [class*="bg-blue-500"], [class*="bg-green-600"] {
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  }
+  
+  /* Type badge hover effect */
+  [class*="bg-"] {
+    transition: all 0.2s ease;
+  }
+  
+  [class*="bg-"]:hover {
+    filter: brightness(1.1);
+  }
+  
+  /* Required field indicators */
+  .text-red-500 {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+  }
+  
+  /* Error messages */
+  .text-red-600 {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Preview section styling */
+  .preview-container {
+    transition: all 0.3s ease;
+  }
+  
+  .preview-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
