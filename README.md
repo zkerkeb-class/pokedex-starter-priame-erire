@@ -44,7 +44,7 @@ Après cela, il faut configurer la base de données. En premier lieu, il faut v�
 Puis, il faut configurer MongoDB Compass et le configurer tel que décrit dans le fichier « .env » du backend. Il faut intégrer les deux exports de la base de données de MongoDB Compass (https://github.com/zkerkeb-class/pokedex-api-priame-erire/tree/main/export_database). Le premier correspond à la base de données pokémons et le deuxième à la base de données des utilisateurs.
 
 NB : Il faut souvent penser à redémarrer MongoDB via l’application système « Services » de Microsoft Windows si le statut du service est arrêté.  C’est typiquement le cas quand MongoDB Compass n’arrive pas à se connecter à la base de données et que l’on obtient des erreurs 500. C’est une cause d’erreur fréquente dans ce projet. Nous vous recommandons de vérifier systématiquement que le backend est bien connecté à MongoDB.
-Une fois toutes ces étapes réalisées, il ne reste plus qu’à lancer le projet en ouvrant un terminal dans Visual Studio code « npm run dev »  .
+Une fois toutes ces étapes réalisées, il ne reste plus qu’à lancer le projet en ouvrant un terminal dans Visual Studio code : ```javascript npm run dev » ```.
 
 |  3) Documentation de l'API      |
 |---------------------------------|
