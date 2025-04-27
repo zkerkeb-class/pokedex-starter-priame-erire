@@ -1,3 +1,4 @@
+// composant qui affiche tous les pokémons
 import React, { useEffect, useState } from 'react';
 import PokemonCard from '../../components/pokemonCard';
 import SearchBar from '../../components/SearchBar';

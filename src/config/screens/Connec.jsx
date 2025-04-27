@@ -1,3 +1,7 @@
+// Ce composant permet d'établir la connexion d'un utilisateur 
+// Il est lancé en premier.
+// La route est publique
+
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { connectUser } from '../../services/api'; 
@@ -8,6 +12,7 @@ const Connec = () => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  // étude de la variation du formulaire identifiant + mdp
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -20,7 +25,7 @@ const Connec = () => {
       [id]: value
     }));
   };
-
+  // gère la validation de la connexion
   const handleSubmit = async (e) => {
     e.preventDefault();
     
