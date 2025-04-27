@@ -1,7 +1,7 @@
 Répertoire GitHub de Pierre-Marie Vermersch 
 
-|---------------------------|
 |  1) Description du projet |
+|---------------------------|
 
 Le projet est une application web qui gère une collection de pokémon. L’accès à cette collection exige une connexion à un compte qui peut être créer in situ. 
 L’ensemble du projet est développé en React en utilisant Node JS. La base de données utilisée est MongoDB. Elle est de type NoSQL.
