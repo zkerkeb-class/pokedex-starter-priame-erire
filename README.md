@@ -1,6 +1,6 @@
 Répertoire GitHub de Pierre-Marie Vermersch 
 
-
+|---------------------------|
 |  1) Description du projet |
 
 Le projet est une application web qui gère une collection de pokémon. L’accès à cette collection exige une connexion à un compte qui peut être créer in situ. 
