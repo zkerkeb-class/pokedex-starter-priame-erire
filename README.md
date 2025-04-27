@@ -34,7 +34,7 @@ Une fois ces outils installés, vous devez configurer les différents outils de 
 Comme vous ne vous en doutez sans doute pas, le projet se découpe en deux parties : frontend et backend. Il faut disposer de ces deux parties pour faire fonctionner le projet.
 
 Ainsi, il faut télécharger le frontend et le backend. 
--	Le frontend est disponible à l’adresse URL suivante : https://github.com/zkerkeb-class/pokedex-starter-priame-erire/
+-	Le frontend est disponible à l’adresse URL suivante : https://github.com/zkerkeb-class/pokedex-starter-priame-erire
 -	Le backend est disponible à l’adresse URL suivante : https://github.com/zkerkeb-class/pokedex-api-priame-erire
 
 Ensuite, il faut les ouvrir ensuite dans Visual Studio dans deux pages distinctes. En effet, les deux parties se lancerons de façons distinctes. Le frontend se lancera sur le port 5173 et le backend sur le port 3000.
